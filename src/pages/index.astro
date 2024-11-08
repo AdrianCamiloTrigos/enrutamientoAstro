@@ -7,7 +7,7 @@ import {Icon} from "astro-icon/components"
 	Este es el inicio
 	<p class="preety-p h-[300px] font-Myfont">holag</p>
 	<Icon name="mdi:delete" class="text-green-500" size="50" />
-	<Icon name="mdi:airport" size=200 />
+	<Icon name="mdi:airport" size=100 />
 </Layout>
 
 <style>
@@ -17,5 +17,20 @@ import {Icon} from "astro-icon/components"
 	}
 
 </style>
+
+<script>
+
+	import JSConfetti from 'js-confetti'
+
+	const jsConfetti = new JSConfetti()
+
+	
+	const divBtn = document.getElementById("btn")
+	divBtn.addEventListener("click", function(event) {
+		console.log("Me has pinchado", event.target.id)
+		jsConfetti.addConfetti()
+	})
+	console.log(divBtn)
+</script>
 
 
